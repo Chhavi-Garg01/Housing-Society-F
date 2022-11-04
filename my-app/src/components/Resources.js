@@ -9,7 +9,15 @@ class Resources extends Component {
     }
 
     componentDidMount() {
-        fetch('http://127.0.0.1:8000/resources').then((result) => {
+        let token= "Bearer "+JSON.parse(localStorage.getItem('auth'));
+        fetch('http://127.0.0.1:8000/resources', {
+            method: "GET",
+            headers: {
+                "Accept": "application/json",
+                "Content-type": "application/json",
+                "Authorization":token
+            }
+        }).then((result) => {
             result.json().then((data) => {
                 this.setState({ items: data })
             })
