@@ -18,16 +18,16 @@ function App() {
       <Router>
         <Nav />
         <Routes>
-          <Route path="/users" element={<Protected cmp={Users}/>}>
+          <Route path="/users" element={<Protected cmp={Users} />}>
           </Route>
-          <Route path="/resources" element={<Protected cmp={Resources}/>}>
+          <Route path="/resources" element={<Protected cmp={Resources} />}>
           </Route>
-          <Route path="/bookings" element={<Protected cmp={Bookings}/>}>
+          <Route path="/bookings" element={<Protected cmp={Bookings} />}>
           </Route>
           <Route path="/login" element={<Auth />}>
           </Route>
         </Routes>
-     </Router>
+      </Router>
     </div>
   );
 }
