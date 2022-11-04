@@ -4,7 +4,7 @@ class Bookings extends Component {
     constructor() {
         super()
         this.state = {
-            items: null
+            bookings: null
         }
     }
     componentDidMount() {
@@ -18,7 +18,7 @@ class Bookings extends Component {
             }
         }).then((result) => {
             result.json().then((data) => {
-                this.setState({ items: data })
+                this.setState({ bookings: data })
             })
         })
     }
@@ -27,16 +27,16 @@ class Bookings extends Component {
             <div>
                 <span> id<span className="tab"></span>Resource<span className="tab"></span> Date Booked<span className="tab"></span> user_id</span>
                 {
-                    this.state.items ?
-                        this.state.items.map((item, i) =>
+                    this.state.bookings ?
+                        this.state.bookings.map((booking, i) =>
                             <div key={i}>
                                 <table>
                                     <tbody>
                                         <tr>
-                                            <td>{item.id}</td>
-                                            <td>{item.resource_name}</td>
-                                            <td>{item.Date_Booked}</td>
-                                            <td>{item.user_id}</td>
+                                            <td>{booking.id}</td>
+                                            <td>{booking.resource_name}</td>
+                                            <td>{booking.Date_Booked}</td>
+                                            <td>{booking.user_id}</td>
                                         </tr>
                                     </tbody>
                                 </table>

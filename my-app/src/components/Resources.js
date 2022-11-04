@@ -4,7 +4,7 @@ class Resources extends Component {
     constructor() {
         super()
         this.state = {
-            items: null
+            resources: null
         }
     }
 
@@ -19,7 +19,7 @@ class Resources extends Component {
             }
         }).then((result) => {
             result.json().then((data) => {
-                this.setState({ items: data })
+                this.setState({ resources: data })
             })
         })
     }
@@ -28,16 +28,16 @@ class Resources extends Component {
             <div>
                 <span> id<span className="tab"></span> Resource <span className="tab"></span>Amount<span className="tab"></span>Availability</span>
                 {
-                    this.state.items ?
-                        this.state.items.map((item,i) =>
+                    this.state.resources ?
+                        this.state.resources.map((resource,i) =>
                             <div key={i}>
                                 <table>
                                     <tbody>
                                         <tr>
-                                            <td>{item.id}</td>
-                                            <td>{item.resource_name}</td>
-                                            <td>{item.amount}</td>
-                                            <td>{item.availability}</td>
+                                            <td>{resource.id}</td>
+                                            <td>{resource.resource_name}</td>
+                                            <td>{resource.amount}</td>
+                                            <td>{resource.availability}</td>
                                         </tr>
                                     </tbody>
                                 </table>
