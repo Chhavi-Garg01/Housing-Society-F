@@ -20,19 +20,21 @@ class Resources extends Component {
             <div>
                 <span> id<span className="tab"></span> Resource <span className="tab"></span>Amount<span className="tab"></span>Availability</span>
                 {
-                    this.state.items?
-                    this.state.items.map((item)=>
-                    <div>
-                        <table>
-                            <tr>
-                            <td>{item.id}</td>
-                            <td>{item.resource_name}</td>
-                            <td>{item.amount}</td>
-                            <td>{item.availability}</td>
-                            </tr>
-                        </table>
-                    </div>
-                    ):null
+                    this.state.items ?
+                        this.state.items.map((item,i) =>
+                            <div key={i}>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>{item.id}</td>
+                                            <td>{item.resource_name}</td>
+                                            <td>{item.amount}</td>
+                                            <td>{item.availability}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        ) : null
                 }
             </div>
         )

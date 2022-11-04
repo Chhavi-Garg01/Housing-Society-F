@@ -11,6 +11,7 @@ import Resources from "./components/Resources";
 import Users from "./components/Users";
 import Protected from './components/Protected';
 import Nav from './components/Nav';
+import Logout from "./components/Logout";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           <Route path="/bookings" element={<Protected cmp={Bookings} />}>
           </Route>
           <Route path="/login" element={<Auth />}>
+          </Route>
+          <Route path="/logout" element={<Logout />}>
           </Route>
         </Routes>
       </Router>

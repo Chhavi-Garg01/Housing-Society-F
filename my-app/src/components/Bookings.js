@@ -1,17 +1,16 @@
-import React , {Component} from 'react'
+import React, { Component } from 'react'
 
 class Bookings extends Component {
-    constructor(){
+    constructor() {
         super()
-        this.state={
-            items:null
+        this.state = {
+            items: null
         }
     }
-    componentDidMount()
-    {
-        fetch('http://127.0.0.1:8000/bookings').then((result)=>{
-            result.json().then((data)=>{
-                this.setState({items:data})
+    componentDidMount() {
+        fetch('http://127.0.0.1:8000/bookings').then((result) => {
+            result.json().then((data) => {
+                this.setState({ items: data })
             })
         })
     }
@@ -20,19 +19,21 @@ class Bookings extends Component {
             <div>
                 <span> id<span className="tab"></span>Resource<span className="tab"></span> user_id Date <span className="tab"></span> Booked</span>
                 {
-                    this.state.items?
-                    this.state.items.map((item)=>
-                    <div>
-                        <table>
-                            <tr>
-                                <th>{item.id}</th>
-                                <td>{item.resource_name}</td>
-                                <td>{item.Date_Booked}</td>
-                                <td>{item.user_id}</td>
-                            </tr>
-                        </table>
-                    </div>
-                    ):null
+                    this.state.items ?
+                        this.state.items.map((item, i) =>
+                            <div key={i}>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <th>{item.id}</th>
+                                            <td>{item.resource_name}</td>
+                                            <td>{item.Date_Booked}</td>
+                                            <td>{item.user_id}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        ) : null
                 }
             </div>
         )
