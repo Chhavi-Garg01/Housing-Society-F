@@ -26,6 +26,7 @@ function App() {
           <Route path="/bookings" element={<Protected cmp={Bookings} />}>
           </Route>
           <Route path="/login" element={<Auth />}>
+          
           </Route>
           <Route path="/logout" element={<Logout />}>
           </Route>
