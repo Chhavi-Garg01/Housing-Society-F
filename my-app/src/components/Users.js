@@ -37,7 +37,6 @@ class Users extends Component {
                                 <td>{user.id}</td>
                                 <td>{user.email}</td>
                                 <td>{user.username}</td>
-                                <td>{user.availability}</td>
                             </tr>
                             </tbody>
                         </table>

@@ -34,6 +34,7 @@ class Auth extends Component {
         }).then((result) => {
             result.json().then((response) => {
                 localStorage.setItem("auth", JSON.stringify(response.token))
+               
             })
         })
     }
