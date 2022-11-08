@@ -4,14 +4,22 @@ class Users extends Component {
     constructor(){
         super()
         this.state={
-            items:null
+            users:null
         }
     }
     componentDidMount()
     {
-        fetch('http://127.0.0.1:8000/users').then((result)=>{
+        let token= "Bearer "+JSON.parse(localStorage.getItem('auth'));
+        fetch('http://127.0.0.1:8000/users', {
+            method: "GET",
+            headers: {
+                "Accept": "application/json",
+                "Content-type": "application/json",
+                "Authorization":token
+            }
+        }).then((result)=>{
             result.json().then((data)=>{
-                this.setState({items:data})
+                this.setState({users:data})
             })
         })
     }
@@ -20,16 +28,18 @@ class Users extends Component {
             <div>
                 <span> id<span className="tab"></span><span className="tab"></span> Email <span className="tab"></span><span className="tab"></span>Username</span>
                 {
-                    this.state.items?
-                    this.state.items.map((item)=>
-                    <div>
+                    this.state.users?
+                    this.state.users.map((user,i)=>
+                    <div key={i}>
                         <table>
+                            <tbody>
                             <tr>
-                                <th>{item.id}</th>
-                                <td>{item.email}</td>
-                                <td>{item.username}</td>
-                                <td>{item.availability}</td>
+                                <td>{user.id}</td>
+                                <td>{user.email}</td>
+                                <td>{user.username}</td>
+                                <td>{user.availability}</td>
                             </tr>
+                            </tbody>
                         </table>
                     </div>
                     ):null
