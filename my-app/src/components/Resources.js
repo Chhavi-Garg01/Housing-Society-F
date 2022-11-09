@@ -10,7 +10,7 @@ class Resources extends Component {
 
     componentDidMount() {
         let token= "Bearer "+JSON.parse(localStorage.getItem('auth'));
-        fetch('http://65.2.125.207:8000/resources', {
+        fetch('https://housing-society0104.herokuapp.com/resources', {
             method: "GET",
             headers: {
                 "Accept": "application/json",

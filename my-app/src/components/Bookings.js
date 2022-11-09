@@ -9,7 +9,7 @@ class Bookings extends Component {
     }
     componentDidMount() {
         let token= "Bearer "+JSON.parse(localStorage.getItem('auth'));
-        fetch('http://65.2.125.207:8000/bookings', {
+        fetch('https://housing-society0104.herokuapp.com/bookings', {
             method: "GET",
             headers: {
                 "Accept": "application/json",

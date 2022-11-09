@@ -9,7 +9,7 @@ class Auth extends Component {
         }
     }
     login() {
-        fetch('http://65.2.125.207:8000/login', {
+        fetch('https://housing-society0104.herokuapp.com/login', {
             method: "POST",
             headers: {
                 "Accept": "application/json",
@@ -24,7 +24,7 @@ class Auth extends Component {
     }
 
     register() {
-        fetch('http://65.2.125.207:8000/signup', {
+        fetch('https://housing-society0104.herokuapp.com/signup', {
             method: "POST",
             headers: {
                 "Accept": "application/json",
