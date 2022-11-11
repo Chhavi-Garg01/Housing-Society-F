@@ -1,37 +1,25 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import './App.css';
-import Auth from './components/Auth';
-import Bookings from './components/Bookings';
-import Resources from "./components/Resources";
-import Users from "./components/Users";
-import Protected from './components/Protected';
-import Nav from './components/Nav';
-import Logout from "./components/Logout";
+import Navbar from './components/Navbar';
+import BookingScreen from './pages/BookingScreen';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Nav />
+      <Navbar />
+      <BrowserRouter>
         <Routes>
-          <Route path="/users" element={<Protected cmp={Users} />}>
-          </Route>
-          <Route path="/resources" element={<Protected cmp={Resources} />}>
-          </Route>
-          <Route path="/bookings" element={<Protected cmp={Bookings} />}>
-          </Route>
-          <Route path="/login" element={<Auth />}>
-          
-          </Route>
-          <Route path="/logout" element={<Logout />}>
-          </Route>
+
+          <Route path="/home" element={<Home />} />
+          <Route path="/book/:id" element={<BookingScreen />} />
+          <Route path="/register" element={<Register/>} />
+          <Route path="/login" element={<Login />}/>
         </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
