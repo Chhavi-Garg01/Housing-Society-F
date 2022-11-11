@@ -21,8 +21,10 @@ function Login() {
     axios.post('http://127.0.0.1:8000/login', user)
       .then(function (response) {
         setloading(false);
-        localStorage.setItem("auth", JSON.stringify(response.data.access_token))
-        localStorage.setItem("username", JSON.stringify(response.data.username))
+        localStorage.setItem("auth", JSON.stringify(response.data.access_token));
+        localStorage.setItem("username", JSON.stringify(response.data.username));
+        localStorage.setItem("email",JSON.stringify(response.data.email));
+        localStorage.setItem("admin",JSON.stringify(response.data.admin));
         window.location.href = "/home";
       })
       .catch(function (error) {
