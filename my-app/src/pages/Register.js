@@ -30,7 +30,7 @@ function Register() {
       })
       .catch(function (error) {
         setloading(false);
-        seterror(true)
+        seterror(true);
       });
   }
 

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import Loader from '../components/Loader';
 import Error from '../components/Error';
 import Success from '../components/Success';
 
-const token = JSON.parse(localStorage.getItem("auth"))
+const token = JSON.parse(localStorage.getItem("auth"));
 
 axios.interceptors.request.use(
   config => {
@@ -18,6 +18,18 @@ axios.interceptors.request.use(
 )
 
 function BookingScreen() {
+
+  const user = JSON.parse(localStorage.getItem("username"));
+
+  useEffect(() => {
+
+    if (!user) {
+      window.location.href = "/login"
+
+    }
+
+  }, [])
+
   const [resource_name, setresource] = useState('');
   const [Date_Booked, setdate] = useState('');
   const [loading, setloading] = useState();
