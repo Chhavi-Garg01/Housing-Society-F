@@ -18,7 +18,7 @@ function Login() {
     }
 
     setloading(true);
-    axios.post('http://127.0.0.1:8000/login', user)
+    axios.post('https://housingsociety0104.herokuapp.com/login', user)
       .then(function (response) {
         setloading(false);
         localStorage.setItem("auth", JSON.stringify(response.data.access_token));

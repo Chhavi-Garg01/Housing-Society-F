@@ -22,7 +22,7 @@ function AllResources() {
   useEffect(async () => {
     try {
       setloading(true);
-      const data = (await axios.get('http://127.0.0.1:8000/resources')).data;
+      const data = (await axios.get('https://housingsociety0104.herokuapp.com/resources')).data;
       setresources(data);
       setloading(false);
     }

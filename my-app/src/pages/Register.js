@@ -22,7 +22,7 @@ function Register() {
     };
 
     setloading(true);
-    axios.post('http://127.0.0.1:8000/signup', user)
+    axios.post('https://housingsociety0104.herokuapp.com/signup', user)
       .then(function (response) {
         setDetail(response.data.detail)
         setloading(false);

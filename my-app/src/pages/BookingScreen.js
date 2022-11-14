@@ -43,7 +43,7 @@ function BookingScreen() {
       Date_Booked
     };
     setloading(true);
-    axios.post('http://127.0.0.1:8000/bookings', book)
+    axios.post('https://housingsociety0104.herokuapp.com/bookings', book)
       .then(function (response) {
         setloading(false);
         setDetail(response.data.message)

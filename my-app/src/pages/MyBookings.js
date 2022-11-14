@@ -21,7 +21,7 @@ function MyBookings() {
 
     useEffect(async () => {
         setloading(true);
-        axios.get('http://127.0.0.1:8000/user_bookings')
+        axios.get('https://housingsociety0104.herokuapp.com/user_bookings')
             .then(function (response) {
                 setbooking(response.data)
                 setloading(false);
@@ -34,7 +34,7 @@ function MyBookings() {
 
     async function updateBooking(id, status) {
         setloading(true);
-        axios.patch(`http://127.0.0.1:8000/bookings/${id}`, { id, status })
+        axios.patch(`https://housingsociety0104.herokuapp.com/bookings/${id}`, { id, status })
             .then(function (response) {
                 setloading(false);
                 Swal.fire("Congrats", "Your booking is updated", "success").then(result => {
