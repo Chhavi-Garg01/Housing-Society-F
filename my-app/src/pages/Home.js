@@ -26,7 +26,7 @@ function Home() {
     useEffect(async () => {
         try {
             setloading(true);
-            const data = (await axios.get('https://housingsociety0104.herokuapp.com/resources')).data;
+            const data = (await axios.get('https://housingsocietybackend.herokuapp.com/resources')).data;
             setresources(data);
             setloading(false);
         }
