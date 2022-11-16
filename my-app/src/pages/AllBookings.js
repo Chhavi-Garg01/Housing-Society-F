@@ -22,7 +22,7 @@ function AllBookings() {
   useEffect(async () => {
     try {
       setloading(true);
-      const data = (await axios.get('https://housingsociety0104.herokuapp.com/bookings')).data;
+      const data = (await axios.get('https://housingsocietybackend.herokuapp.com/bookings')).data;
       setbookings(data);
       setloading(false);
     }
