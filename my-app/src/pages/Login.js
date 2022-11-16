@@ -18,7 +18,7 @@ function Login() {
     }
 
     setloading(true);
-    axios.post('https://housingsociety0104.herokuapp.com/login', user)
+    axios.post('https://housingsocietybackend.herokuapp.com/login', user)
       .then(function (response) {
         setloading(false);
         localStorage.setItem("auth", JSON.stringify(response.data.access_token));
