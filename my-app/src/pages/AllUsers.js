@@ -22,7 +22,7 @@ function AllUsers() {
   useEffect(async () => {
     try {
       setloading(true);
-      const data = (await axios.get('https://housingsociety0104.herokuapp.com/users')).data;
+      const data = (await axios.get('https://housingsocietybackend.herokuapp.com/users')).data;
       setusers(data);
       setloading(false);
     }
