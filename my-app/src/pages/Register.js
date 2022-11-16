@@ -22,7 +22,7 @@ function Register() {
     };
 
     setloading(true);
-    axios.post('https://housingsociety0104.herokuapp.com/signup', user)
+    axios.post('https://housingsocietybackend.herokuapp.com/signup', user)
       .then(function (response) {
         setDetail(response.data.detail)
         setloading(false);
