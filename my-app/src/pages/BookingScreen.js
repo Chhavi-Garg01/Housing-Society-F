@@ -43,7 +43,7 @@ function BookingScreen() {
       Date_Booked
     };
     setloading(true);
-    axios.post('https://housingsociety0104.herokuapp.com/bookings', book)
+    axios.post('https://housingsocietybackend.herokuapp.com/bookings', book)
       .then(function (response) {
         setloading(false);
         setDetail(response.data.message)
