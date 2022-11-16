@@ -38,7 +38,7 @@ function AddResource() {
             image
         };
         setloading(true);
-        axios.post('https://housingsociety0104.herokuapp.com/resources', res)
+        axios.post('https://housingsocietybackend.herokuapp.com/resources', res)
             .then(function (response) {
                 setloading(false);
                 Swal.fire("Congrats", "Resource Added Successfully", "success").then(result => {
